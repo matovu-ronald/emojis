@@ -17,6 +17,17 @@ coverage.*
 *.coverprofile
 profile.cov
 
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
 # Dependency directories (remove the comment below to include it)
 # vendor/
 

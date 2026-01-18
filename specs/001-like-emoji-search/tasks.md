@@ -17,9 +17,9 @@
 
 **Purpose**: Ensure tooling and baseline cleanliness for Go module and tests.
 
-- [ ] T001 Run gofmt on codebase and verify clean working tree in search/ and root
-- [ ] T002 Run go vet for package search/ to confirm no baseline issues
-- [ ] T003 [P] Add constitution compliance note for like-emoji work in README section if needed in README.md
+- [x] T001 Run gofmt on codebase and verify clean working tree in search/ and root
+- [x] T002 Run go vet for package search/ to confirm no baseline issues
+- [x] T003 [P] Add constitution compliance note for like-emoji work in README section if needed in README.md
 
 ---
 
@@ -27,10 +27,10 @@
 
 **Purpose**: Core shared components required before user stories.
 
-- [ ] T004 Define LikeParams struct and validation scaffolding in search/search.go (seed fields, include/exclude, limit default)
-- [ ] T005 [P] Add normalization helpers for labels/tags (trim, lowercase, split terms) in search/search.go
-- [ ] T006 [P] Add helper to compute overlap score and deterministic sort comparator in search/search.go
-- [ ] T007 Add unit tests for validation and helpers (normalization, overlap, clamping) in search/search_test.go
+- [x] T004 Define LikeParams struct and validation scaffolding in search/search.go (seed fields, include/exclude, limit default)
+- [x] T005 [P] Add normalization helpers for labels/tags (trim, lowercase, split terms) in search/search.go
+- [x] T006 [P] Add helper to compute overlap score and deterministic sort comparator in search/search.go
+- [x] T007 Add unit tests for validation and helpers (normalization, overlap, clamping) in search/search_test.go
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel.
 
@@ -44,16 +44,16 @@
 
 ### Tests for User Story 1 (write first)
 
-- [ ] T008 [P] [US1] Add table-driven tests for like search similarity (emoji seed vs label seed) ensuring seed is excluded and order is deterministic in search/search_test.go
-- [ ] T009 [P] [US1] Add tests for empty/unknown seed returning empty slice in search/search_test.go
-- [ ] T024 [P] [US1] Add tests ensuring representative seeds return at least three related emojis where applicable (SC-001) in search/search_test.go
-- [ ] T025 [P] [US1] Add repeatability test running the same query multiple times to confirm identical ordering/content (SC-002) in search/search_test.go
+- [x] T008 [P] [US1] Add table-driven tests for like search similarity (emoji seed vs label seed) ensuring seed is excluded and order is deterministic in search/search_test.go
+- [x] T009 [P] [US1] Add tests for empty/unknown seed returning empty slice in search/search_test.go
+- [x] T024 [P] [US1] Add tests ensuring representative seeds return at least three related emojis where applicable (SC-001) in search/search_test.go
+- [x] T025 [P] [US1] Add repeatability test running the same query multiple times to confirm identical ordering/content (SC-002) in search/search_test.go
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Implement Like function core: seed resolution, similarity scoring, deterministic ordering in search/search.go
-- [ ] T011 [US1] Add GoDoc comment and example for Like in search/doc.go
-- [ ] T012 [US1] Update README usage section with basic like search example in README.md
+- [x] T010 [US1] Implement Like function core: seed resolution, similarity scoring, deterministic ordering in search/search.go
+- [x] T011 [US1] Add GoDoc comment and example for Like in search/doc.go
+- [x] T012 [US1] Update README usage section with basic like search example in README.md
 
 **Checkpoint**: User Story 1 fully functional and independently testable.
 
@@ -67,13 +67,13 @@
 
 ### Tests for User Story 2 (write first)
 
-- [ ] T013 [P] [US2] Add tests covering include-only, exclude-only, combined filters, and precedence (exclude wins) in search/search_test.go
-- [ ] T026 [P] [US2] Add include/exclude compliance matrix tests across at least five tag combinations to verify filter correctness (SC-003) in search/search_test.go
+- [x] T013 [P] [US2] Add tests covering include-only, exclude-only, combined filters, and precedence (exclude wins) in search/search_test.go
+- [x] T026 [P] [US2] Add include/exclude compliance matrix tests across at least five tag combinations to verify filter correctness (SC-003) in search/search_test.go
 
 ### Implementation for User Story 2
 
-- [ ] T014 [US2] Implement include/exclude filtering path before scoring, honoring exclude precedence in search/search.go
-- [ ] T015 [US2] Extend README filter example and quickstart to show include/exclude usage in README.md and specs/001-like-emoji-search/quickstart.md
+- [x] T014 [US2] Implement include/exclude filtering path before scoring, honoring exclude precedence in search/search.go
+- [x] T015 [US2] Extend README filter example and quickstart to show include/exclude usage in README.md and specs/001-like-emoji-search/quickstart.md
 
 **Checkpoint**: User Stories 1 and 2 independently functional and filter logic validated.
 
@@ -87,12 +87,12 @@
 
 ### Tests for User Story 3 (write first)
 
-- [ ] T016 [P] [US3] Add tests for limit clamping (negative → 0, large → dataset size/default 50) and ordering stability across repeated calls in search/search_test.go
+- [x] T016 [P] [US3] Add tests for limit clamping (negative → 0, large → dataset size/default 50) and ordering stability across repeated calls in search/search_test.go
 
 ### Implementation for User Story 3
 
-- [ ] T017 [US3] Apply limit enforcement and early-stop collection; confirm tie-breaker (label asc) in search/search.go
-- [ ] T018 [US3] Document limit and ordering rules in doc.go and README.md
+- [x] T017 [US3] Apply limit enforcement and early-stop collection; confirm tie-breaker (label asc) in search/search.go
+- [x] T018 [US3] Document limit and ordering rules in doc.go and README.md
 
 **Checkpoint**: All user stories independently functional with deterministic capped results.
 
@@ -102,12 +102,12 @@
 
 **Purpose**: Final quality, documentation, and verification.
 
-- [ ] T019 [P] Add/refresh package-level comments or examples in search/doc.go to align with new Like API
-- [ ] T020 [P] Verify quickstart compiles/runs and matches API behavior in specs/001-like-emoji-search/quickstart.md
-- [ ] T021 [P] Run full test suite and vet (go test ./..., go vet ./...) before release
-- [ ] T022 Review for deterministic outputs and add any missing regression cases in search/search_test.go
-- [ ] T023 Update spec and plan statuses if needed to reflect completion in specs/001-like-emoji-search/
-- [ ] T027 [P] Add benchmark or timed test to confirm like search completes within ~0.5s on full dataset (SC-004); document result in README or quickstart
+- [x] T019 [P] Add/refresh package-level comments or examples in search/doc.go to align with new Like API
+- [x] T020 [P] Verify quickstart compiles/runs and matches API behavior in specs/001-like-emoji-search/quickstart.md
+- [x] T021 [P] Run full test suite and vet (go test ./..., go vet ./...) before release
+- [x] T022 Review for deterministic outputs and add any missing regression cases in search/search_test.go
+- [x] T023 Update spec and plan statuses if needed to reflect completion in specs/001-like-emoji-search/
+- [x] T027 [P] Add benchmark or timed test to confirm like search completes within ~0.5s on full dataset (SC-004); document result in README or quickstart
 
 ---
 

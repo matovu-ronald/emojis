@@ -17,10 +17,10 @@ import (
 
 func main() {
     results := search.Like(search.LikeParams{
-        SeedEmoji: "👍",
-        Include:   []string{"hand"},
-        Exclude:   []string{"skin-tone"},
-        Limit:     5,
+        SeedEmoji: "🍇",
+        Include:   []string{"fruit"},
+        Exclude:   []string{"citrus"},
+        Limit:     3,
     })
 
     for _, e := range results {

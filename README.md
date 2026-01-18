@@ -38,6 +38,30 @@ func main() {
 }
 ```
 
+### Like (Similar Emoji) Search
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/matovu-ronald/emojis/search"
+)
+
+func main() {
+	results := search.Like(search.LikeParams{
+		SeedEmoji: "🍇",
+		Include:   []string{"fruit"},
+		Exclude:   []string{"citrus"},
+		Limit:     3,
+	})
+
+	for _, emoji := range results {
+		fmt.Println(emoji.Emoji, emoji.Label)
+	}
+}
+```
+
 ### Search Parameters
 
 The `Params` struct supports:
@@ -68,6 +92,26 @@ type Params struct {
 	Include []string // Labels/tags to include in search
 	Exclude []string // Labels/tags to exclude from search
 }
+
+#### `Like(params LikeParams) []Emoji`
+
+Searches for emojis related to a seed emoji or label using tag/label overlap with deterministic ordering and optional include/exclude filters.
+
+```go
+type LikeParams struct {
+	SeedEmoji string
+	SeedLabel string
+	Include   []string
+	Exclude   []string
+	Limit     int
+}
+```
+
+**Notes**
+
+- Seed emoji is excluded from results.
+- Include filters require at least one match; exclude filters remove any match.
+- Ordering is deterministic: score desc, then label asc; limit defaults to 50 and clamps to the dataset size.
 ```
 
 #### `Emoji`
