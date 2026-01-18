@@ -30,6 +30,24 @@ func ByDescription(params Params) (result []Emoji) {
 	return
 }
 
+// ByTags searches emojis that match all the provided tags
+func ByTags(tags ...string) (result []Emoji) {
+tagLoop:
+	for _, emo := range emojis {
+		for _, tag := range tags {
+			tag = strings.ToLower(tag)
+			if !slices.Contains(emo.Tags, tag) {
+				continue tagLoop
+			}
+		}
+		result = append(result, emo)
+	}
+
+	return
+}
+
+// Like is a placeholder for future implementation of fuzzy search
+
 // version 0.1.0
 // func Like(emoji string) (result []emoji) {...}
 
