@@ -1,3 +1,5 @@
+[![Go Reference](https://pkg.go.dev/badge/github.com/matovu-ronald/emojis.svg)](https://pkg.go.dev/github.com/matovu-ronald/emojis)
+
 # emojis
 
 A Go module that provides emoji search functionality. Search for emojis by description, tags, and categories.
